@@ -1,0 +1,241 @@
+.graphic-design {
+  &__wrp {
+    padding: 40px 0 100px 0;
+    @include flex($justify: center, $align: center, $direction: column);
+    gap: 60px;
+    figure {
+      padding: 0 24px;
+
+      img {
+        @include tablet() {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .design-text {
+      text-align: center;
+      max-width: 820px;
+      @include flex($justify: center, $direction: column);
+      gap: 20px;
+
+      span {
+        color: map-get($color_purple, 400);
+        @include font($weight: 400, $line-height: 24px);
+      }
+
+      h2 {
+        color: map-get($color_purple, 700);
+        @include font($size: 48px, $weight: 600, $line-height: 64px);
+      }
+
+      p {
+        color: map-get($color_purple, 900);
+        @include font($weight: 400);
+      }
+    }
+  }
+}
+
+////////////////////
+
+.team-about {
+    padding-bottom: 100px;
+  &__cards {
+    @include flex($wrap: wrap);
+
+    gap: 20px;
+
+    .cards-item {
+      width: calc((100% - 40px) / 3);
+      border-radius: 8px;
+      padding: 100px 55px 60px;
+      @include flex($justify: center, $align: center, $direction: column);
+      gap: 61px;
+
+      .items-text {
+        text-align: center;
+        margin-bottom: 14px;
+        span {
+          color: map-get($color_purple, 600);
+          @include font($size: 20px, $weight: 500);
+        }
+        p {
+          color: map-get($color_purple, 900);
+          @include font($size: 14px, $weight: 400, $line-height: 24px);
+        }
+      }
+      @include tablet() {
+        padding: 60px 17px 20px;
+      }
+      @include mobile() {
+        width: 100%;
+      }
+    }
+    .cardOne {
+      background-color: map-get($color_purple, 50);
+    }
+    .cardTwo {
+      background-color: map-get($color_purple, 100);
+    }
+    .cardThree {
+      background-color: map-get($color_purple, 200);
+    }
+  }
+}
+
+//////////////////
+
+.works {    
+  position: relative;
+  padding: 100px 24px 34px;
+  background-image: linear-gradient(
+    map-get($color_purple, 600),
+    map-get($color_purple, 800)
+  );
+
+  @include tablet(){
+    padding: 100px 73px 34px;
+  }
+  @include mobile(){
+    padding: 100px 24px 34px;
+  }
+
+  &__wrp {
+    @include flex($align: center, $direction: column);
+    gap: 20px;
+    @include mobile(){
+        margin-bottom: 32px;
+    }
+    .works-title {
+      text-align: center;
+      @include font($size: 48px, $weight: 600, $line-height: 64px);
+      color: map-get($color_purple, 50);
+
+      @include tablet() {
+        @include font($size: 34px, $weight: 600, $line-height: 40px);
+      }
+    }
+
+    .works-slider {
+      max-width: 1030px;
+      width: 100%;
+
+      @include tablet() {
+        max-width: 759px;
+        width: 100%;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .slick-dots{
+        li{
+            margin: 0;
+            button{
+                &::before{
+                    color: map-get($color_purple,50);
+                    opacity: 1;
+                }
+            }
+        }
+        .slick-active{
+            button{
+                &::before{
+                    color: map-get($color_purple,100);
+                    font-size: 8px;
+                }
+            }
+        }
+      }
+    }
+  }
+
+   .work-btn{
+    @include mobile(){
+        @include flex($justify:space-between,$align:center);
+    }
+    .prev {
+        position: absolute;
+        left: 7%;
+        top: 54%;
+
+        &:hover path{
+            stroke:map-get($color_purple,300);
+        }
+    
+        @include tablet(){
+            position: absolute;
+            left: 5%;
+            top: 54%;
+        }
+        @include mobile(){
+            position: static;
+        }
+      }
+      
+      .next{
+        position: absolute;
+        right: 7%;
+        top: 54%;
+        
+        &:hover path{
+          stroke:map-get($color_purple,300);
+      }
+        @include tablet(){
+            position: absolute;
+            right: 5%;
+            top: 54%;
+        }
+        @include mobile(){
+            position: static;
+        }
+      }
+   }
+}
+
+
+////////////////////
+
+
+.programming-apply{
+    background-image: url(/assets/images/programming-apply-img.svg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+     @include flex ($justify:center);
+
+    &__wrp{
+        text-align: center;
+        max-width: 610px;
+        @include flex($justify:center,$align:center,$direction:column);
+        gap: 24px;
+
+        h4{
+            @include font($size:34px,$weight:600,$line-height:40px);
+            color: map-get($color_purple,700);
+        }
+        p{
+            @include font($size:14px,$weight:400,$line-height:24px);
+            color: map-get($color_purple,900);
+            
+        }
+        
+        a{
+            padding: 16px 72px;
+            border-radius: 8px;
+            background-color: map-get($color_purple3,500);
+            @include font($size:20px,$weight:500,$line-height:24px);
+            color: map-get($color_purple,50);
+
+            &:hover{
+                background-color: map-get($color_purple3,700);
+                transition: all 0.4s ease;
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+//abstract import
+@import "./abstracts/colors";
+@import "./abstracts/mixins";
+
+//base import
+@import "./base/reset"; 
+@import "./base/fonts"; 
+@import "./base/global";    
+@import "./base/container"; 
+
+//component import
+@import "./components/dropdown";
+@import "./components/aside";
+@import "./components/accordion";
+
+//layout import
+ @import "./layout/header";
+ @import "./layout/footer"; 
+
+ //page import
+
+ @import "./pages/home";
+ @import "./pages/notFound";
+ @import "./pages/education";
+ @import "./pages/programming";
+ @import "./pages/projects";
+ @import "./pages/projects-about.scss";
+ @import "./pages/about";
+ @import "./pages/contact";
+
+
+

@@ -1,0 +1,128 @@
+.footer{
+    padding: 40px 0  20px 0;
+    background-image: linear-gradient(
+        map-get($color_purple, 600),
+        map-get($color_purple, 900)
+      );
+      .footer-top{
+        @include flex($justify:space-between);
+        @include mobile(){
+            @include flex($direction:column);
+            gap: 40px;
+        }
+        &__logo{
+           width: 30%;
+           @include mobile(){
+            width: 100%;
+            text-align: center;
+           }
+        }
+        &__right{
+            width: 70%;
+            @include flex($justify:space-between);
+            @include mobile(){
+                width: 100%;
+                @include flex($direction:column,$align:center);
+            }
+            .footer-education{
+                ul{
+                    @include flex($direction:column);
+                    gap: 8px;
+
+                    li{
+                        a{
+                            @include font($weight:400,$line-height:24px);
+                            color: map-get($color_purple,100);
+
+                            &:hover{
+                                color: map-get($color_purple,300);
+                            }
+                        }
+                        #education{
+                            @include font($weight:500,$line-height:24px);
+                            color: map-get($color_purple,50);
+                            &:hover{
+                                color: map-get($color_purple,300);
+                            }
+                        }
+                    }
+                }
+            }
+            .footer-about{
+                @include mobile(){
+                    margin-top: 40px;
+                }
+                @include flex($direction:column);
+                gap: 8px;
+                @include mobile(){
+                    text-align: center;
+                }
+                 ul{
+                    @include flex($direction:column);
+                    gap: 14px;
+                    li{
+                        a{
+                            @include font($weight:500,$line-height:24px);
+                            color: map-get($color_purple,50);
+                            &:hover{
+                                color: map-get($color_purple,300);
+                            }
+                        }
+                    }
+                 }
+                 .footer-contact{
+                    @include flex($direction:column);
+                    gap: 8px;
+
+                    a{
+                        @include font($size:14px,$weight:500,$line-height:24px);
+                        color: map-get($color_purple, 100);
+                        &:hover{
+                            color: map-get($color_purple,300);
+                        }
+                    }
+                 }
+            }
+        }
+      }
+
+      .footer-bottom{
+        margin-top: 60px;
+        ul{
+            @include flex();
+            gap: 32px;
+            @include mobile(){
+                @include flex($justify:space-between);
+            }
+
+            li{
+                svg{
+                 &:hover path{
+                   fill:map-get($color_purple,300);
+                 }
+                }
+                &:last-child{
+                    svg{
+                        &:hover path{
+                            stroke:map-get($color_purple,300);
+                        }
+                    }
+                 }
+            }
+        }
+      }
+      
+}
+.law {
+    padding: 14px 0;
+  
+    a {
+      @include font($size: 12px, $weight: 400, $line-height: 24px);
+      color: map-get($color_purple, 900);
+      background-color: #fff;
+  
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }

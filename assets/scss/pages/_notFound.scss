@@ -1,0 +1,43 @@
+.notFound{
+    background-image: url(/assets/images/notFound-bg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100%;
+
+    .wrp{
+        padding: 100px 0;
+        @include flex($justify:center,$align:center,$direction:column);
+        gap: 40px;
+
+       h1{
+        @include font($size:300px,$weight:600,$line-height:300px);
+        color: map-get($color_purple,400);
+        
+        @include tablet(){
+            @include font($size:240px,$weight:600,$line-height:300px);
+        }
+        @include mobile(){
+            @include font($size:176px,$weight:600,$line-height:300px);
+        }
+       }
+
+       span{
+        color: map-get($color_purple,400);
+        @include font($size:20px,$weight:500);
+       }
+
+       a{
+        padding: 12px 48px;
+        border: 1px solid map-get($color_purple,700);
+        border-radius: 8px;
+        color: map-get($color_purple,700);
+        @include font($weight:500,$line-height:20px);
+
+        &:hover{
+            transition: all 0.4s ease;
+            background-color: map-get($color_purple,700);
+            color: map-get($color_purple,50);
+        }
+       }
+    }
+}

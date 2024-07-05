@@ -1,0 +1,33 @@
+.nav-education{
+    &:hover  .nav-education__dropdown{
+      visibility: visible;
+      transition: all .5s;
+    }
+    .nav-education__dropdown{
+        position: absolute;
+        left: 6%;
+        top: 67%;
+        padding: 26px 87px 26px 26px;
+        border: 1px solid map-get($color_purple,50);
+        background-color: #fff;
+        border-radius: 12px;
+        @include box-shadow($blur:6px,$spread:-4px,$color:#101828);
+         visibility: hidden;
+         transition: all 0.5s ease;
+         ul{
+            @include flex($direction:column);
+            gap: 32px;
+
+            li{
+                @include flex($align:center);
+                gap: 20px;
+
+                a{
+                    @include font($weight:500,$line-height:24px);
+                    color: map-get($color_purple,700);
+                }
+            }
+         }
+        
+    }
+}

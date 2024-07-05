@@ -1,0 +1,94 @@
+.about-title{
+    &__wrp{
+        padding: 50px 0 129px;
+        @include flex($justify:space-between);
+
+        @include mobile(){
+            @include flex($direction:column);
+            gap: 24px;
+        }
+       
+        .title{
+            width: 100%;
+            max-width: 505px;
+            @include flex($justify:center,$align:center);
+            p{
+                @include font($size:58px,$weight:600,$line-height:72px);
+                color: map-get($color_purple,700);
+                
+                @include tablet(){
+                    @include font($size:48px,$weight:600,$line-height:64px);
+                }
+
+                @include mobile(){
+                    @include font($size:34px,$weight:600,$line-height:40px);
+                }
+            }
+        }
+
+        figure{
+            position: relative;
+            #about-img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .about-logo{
+                position: absolute;
+                left: -18%;
+                bottom: -18%;
+
+                @include tablet(){
+                    max-width: 97px;
+                    position: absolute;
+                    left: -6%;
+                    bottom: -9%;
+                }
+                @include mobile(){
+                    max-width: 67px;
+                    left: -3%;
+                    bottom: -4%;
+                }
+            }
+        }
+    }
+}
+
+
+//////////////////////
+
+
+.projects-about-text{
+    padding-bottom: 100px;
+    &__wrp{
+        @include flex($direction:column);
+        gap: 20px;
+        h3{
+            max-width: 610px;
+            @include font($size:20px,$weight:600);
+            color: map-get($color_purple,900);
+        }
+
+        p{
+            max-width: 926px;
+            @include font($weight:400);
+            color: map-get($color_purple,900);
+        }
+    }
+}
+
+
+////////////////////
+
+
+.about-background{
+    background-image: url(/assets/images/programming-apply-img.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    height: 245px;
+
+    @include mobile(){
+        height: 375px;
+    }
+}

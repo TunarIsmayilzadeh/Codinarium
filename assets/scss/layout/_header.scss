@@ -1,0 +1,72 @@
+.header {
+  &__wrp {
+    @include flex($justify: space-between, $align: center);
+    position: relative;
+    .header-nav-left,
+    .header-nav-right {
+      @include tablet() {
+        display: none;
+        height: 100%;
+      }
+      &#nav-active {
+        li {
+          .header-nav-items.active {
+            color: map-get($color_purple, 900);
+            position: relative;
+
+            &::before {
+              position: absolute;
+              content: url(/assets/images/header-active-img.svg);
+              top: 70%;
+              left: 47%;
+            }
+
+            &:hover {
+              color: map-get($color_purple, 500);
+            }
+          }
+          .header-nav-items:not(.active) {
+            opacity: 50%;
+            &:hover {
+              color: map-get($color_purple, 500);
+            }
+          }
+        }
+      }
+      .nav-list {
+        @include flex($align: center);
+        gap: 40px;
+
+        li {
+          .header-nav-items {
+            @include font($weight: 500, $line-height: 24px);
+            color: map-get($color_purple, 900);
+            svg path {
+              stroke: map-get($color_purple, 900);
+            }
+            &:hover {
+              color: map-get($color_purple, 500);
+
+              svg path {
+                stroke: map-get($color_purple, 500);
+              }
+              svg {
+                rotate: 180deg;
+                transition: all 0.3s ease;
+              }
+            }
+          }
+        }
+      }
+    }
+    figure {
+      padding: 20px 0;
+    }
+    .burger__menu {
+      display: none;
+      @include tablet() {
+        display: initial;
+      }
+    }
+  }
+}
